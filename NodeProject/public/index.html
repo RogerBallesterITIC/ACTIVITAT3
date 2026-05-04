@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Convertidor PokeAPI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f0f0f0;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .row {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      background: #fafafa;
+    }
+    .row h3 {
+      margin-top: 0;
+      color: #02ff0a;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .left-area {
+      flex: 1;
+    }
+    .right-area {
+      flex: 1;
+      text-align: center;
+      border-left: 1px solid #ddd;
+      padding-left: 20px;
+    }
+    .flex-row {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: monospace;
+      resize: vertical;
+      box-sizing: border-box;
+    }
+    input {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button {
+      background-color: #02ff0a;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      margin: 5px;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    button:hover {
+      background-color: #02ff0a;
+    }
+    .button-group {
+      margin-top: 10px;
+    }
+    #imageContainer img {
+      max-width: 150px;
+      height: auto;
+      margin-top: 10px;
+    }
+    .abilities-text {
+      margin-top: 10px;
+      padding: 10px;
+      background: #e8e8e8;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+    hr {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Convertidor PokeAPI</h1>
+
+  <!-- <div class="row">
+    <h3>Conversor JSON ↔ XML</h3>
+    <div class="flex-row">
+      <div class="left-area">
+        <textarea id="input"></textarea>
+        <div class="button-group">
+          <button id="btnToJSON">XML → JSON</button>
+          <button id="btnToXML">JSON → XML</button>
+        </div>
+      </div>
+      <div class="right-area">
+        <strong>Resultado:</strong>
+        <textarea id="output"></textarea>
+      </div>
+    </div>
+  </div>-->
+
+  <div class="row">
+    <h3> Pokémon en XML</h3>
+    <div class="flex-row">
+      <div class="left-area">
+        <input type="text" id="pokemonInput1">
+        <div class="button-group">
+          <button id="btnPokemonToXML">Convertir a XML</button>
+        </div>
+      </div>
+      <div class="right-area">
+        <strong>XML Resultado:</strong>
+        <textarea id="xmlOutput"></textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h3>Habilidades & Imagen del Pokémon</h3>
+    <div class="flex-row">
+      <div class="left-area">
+        <input type="text" id="pokemonInput2">
+        <div class="button-group">
+          <button id="btnShowAbilities">Mostrar Habilidades</button>
+          <button id="btnShowImage">Mostrar Imagen</button>
+        </div>
+        <div id="abilitiesContainer" class="abilities-text"></div>
+      </div>
+      <div class="right-area">
+        <strong>Sprite del Pokémon:</strong>
+        <div id="imageContainer"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
